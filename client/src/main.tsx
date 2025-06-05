@@ -8,9 +8,14 @@ import { RouterProvider, createBrowserRouter } from "react-router";
 // Import the main app component
 import App from "./App";
 
+import CategoryDetail from "./pages/categories/CategoryDetail";
+import CategoryEdit from "./pages/categories/CategoryEdit";
+import CategoryIndex from "./pages/categories/CategoryIndex";
+import CategoryNew from "./pages/categories/CategoryNew";
 import Home from "./pages/home/Home";
 // Import additional components for new routes
 import NotFound from "./pages/notFound/NotFound";
+import ProgramDetail from "./pages/programs/ProgramDetail";
 import Programs from "./pages/programs/Programs";
 // Try creating these components in the "pages" folder
 
@@ -29,6 +34,11 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "programs", element: <Programs /> },
+      { path: "programs/:id", element: <ProgramDetail /> },
+      { path: "categories", element: <CategoryIndex /> },
+      { path: "categories/:id", element: <CategoryDetail /> },
+      { path: "categories/new", element: <CategoryNew /> },
+      { path: "categories/:id/edit", element: <CategoryEdit /> },
     ], // Renders the App component for the home page
   },
   // Try adding a new route! For example, "/about" with an About component
